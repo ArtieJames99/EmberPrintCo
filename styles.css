@@ -1,0 +1,148 @@
+/* Ember Print Co. — brand styles
+   Palette: Ember #FF6B35 · Burnt #E4571E · Bone #F6F3EC · Charcoal #1A1A1A · Smoke #6B6B6B
+   Type: Cinzel Bold (display) · Montserrat (body) */
+
+:root {
+  --ember: #FF6B35;
+  --burnt: #E4571E;
+  --bone: #F6F3EC;
+  --charcoal: #1A1A1A;
+  --smoke: #6B6B6B;
+  --display: 'Cinzel', serif;
+  --body: 'Montserrat', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--bone);
+  color: var(--charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; letter-spacing: .02em; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 1rem; }
+h3 { font-size: 1.25rem; margin-bottom: .5rem; }
+p { color: var(--smoke); }
+.section-dark p { color: #b9b2a6; }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+.wrap.narrow { max-width: 640px; }
+.section { padding: 5rem 0; }
+.section-dark { background: var(--charcoal); color: var(--bone); }
+.section-dark h2, .section-dark h3 { color: var(--bone); }
+
+.kicker {
+  font-size: .8rem; font-weight: 700; letter-spacing: .25em;
+  text-transform: uppercase; color: var(--ember); margin-bottom: .75rem;
+}
+.section-sub { max-width: 640px; margin-bottom: 2.5rem; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block; padding: .9rem 2rem; border-radius: 4px;
+  background: linear-gradient(135deg, var(--ember), var(--burnt));
+  color: #fff; font-weight: 700; text-decoration: none; border: none;
+  cursor: pointer; font-family: var(--body); font-size: 1rem;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,107,53,.35); }
+.btn-small { padding: .6rem 1.25rem; font-size: .9rem; }
+.btn-ghost {
+  background: transparent; color: var(--charcoal);
+  border: 2px solid var(--charcoal);
+}
+.btn-ghost:hover { box-shadow: none; background: var(--charcoal); color: var(--bone); }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.5rem; background: rgba(26,26,26,.96);
+  backdrop-filter: blur(6px);
+}
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+.brand-flame { width: 28px; height: 28px; fill: url(#emberGrad); fill: var(--ember); }
+.brand-text { font-family: var(--display); font-weight: 700; color: var(--bone); letter-spacing: .08em; }
+.brand-text em { font-style: normal; color: var(--ember); }
+.nav-links { display: flex; gap: 1.75rem; }
+.nav-links a { color: var(--bone); text-decoration: none; font-size: .92rem; font-weight: 600; opacity: .85; }
+.nav-links a:hover { opacity: 1; color: var(--ember); }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--charcoal); color: var(--bone);
+  padding: 6rem 1.5rem 5rem; text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 110%, rgba(255,107,53,.22), transparent 70%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+.hero-flame { width: 72px; height: 72px; fill: var(--ember); margin-bottom: 1.25rem;
+  filter: drop-shadow(0 0 24px rgba(255,107,53,.55)); }
+.hero h1 { font-size: clamp(2.6rem, 8vw, 5rem); color: var(--bone); margin-bottom: 1.25rem; }
+.lede { font-size: 1.15rem; color: #cfc8bb; max-width: 600px; margin: 0 auto 2rem; }
+.hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.hero .btn-ghost { color: var(--bone); border-color: var(--bone); }
+.hero .btn-ghost:hover { background: var(--bone); color: var(--charcoal); }
+.hero-proof { display: flex; gap: .75rem; justify-content: center; align-items: center;
+  font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; color: #8f887c; }
+.hero-proof i { color: var(--ember); font-style: normal; }
+
+/* ---------- Cards ---------- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.card {
+  background: #fff; border-radius: 8px; padding: 2rem;
+  border-top: 4px solid var(--ember);
+  box-shadow: 0 4px 16px rgba(26,26,26,.06);
+  transition: transform .15s ease;
+}
+.card:hover { transform: translateY(-4px); }
+.section-dark .card { background: #242424; border-top-color: var(--ember); box-shadow: none; }
+.product-swatch {
+  width: 56px; height: 56px; border-radius: 50%; margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--ember), var(--burnt));
+  color: #fff; font-family: var(--display); font-weight: 700; font-size: 1.4rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ---------- Steps ---------- */
+.steps { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+.step-n { font-family: var(--display); font-size: 2.2rem; color: var(--ember); display: block; margin-bottom: .5rem; }
+.steps em { color: var(--ember); font-style: normal; font-weight: 700; }
+
+/* ---------- Quote form ---------- */
+.quote-form { display: grid; gap: 1.1rem; margin-top: 2rem; }
+.quote-form label { display: grid; gap: .4rem; font-weight: 600; font-size: .92rem; color: var(--charcoal); }
+.quote-form input, .quote-form textarea {
+  font-family: var(--body); font-size: 1rem; padding: .85rem 1rem;
+  border: 2px solid #ddd5c7; border-radius: 4px; background: #fff; color: var(--charcoal);
+}
+.quote-form input:focus, .quote-form textarea:focus { outline: none; border-color: var(--ember); }
+.form-note { font-size: .85rem; text-align: center; }
+
+/* ---------- Footer ---------- */
+footer { background: var(--charcoal); color: var(--bone); padding: 3rem 0; }
+.footer-inner { text-align: center; display: grid; gap: .75rem; justify-items: center; }
+.footer-brand { display: flex; align-items: center; gap: .6rem;
+  font-family: var(--display); font-weight: 700; letter-spacing: .08em; }
+.footer-brand em { font-style: normal; color: var(--ember); }
+.footer-tag { color: var(--ember); font-weight: 600; font-size: .95rem; }
+.footer-copy { font-size: .82rem; color: #8f887c; }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .section { padding: 3.5rem 0; }
+  .hero { padding: 4rem 1.25rem 3.5rem; }
+}
